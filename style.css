@@ -1,0 +1,494 @@
+/* Color Systems & Design Variables */
+:root {
+    --glass-card: rgba(15, 23, 42, 0.55);
+    --glass-border: rgba(255, 255, 255, 0.12);
+    --text-main: #ffffff;
+    --text-sub: #cbd5e1;
+    --eco-glow: #10b981;
+    --alert-neon: #ff4757;
+}
+
+/* System Initialization */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 20px;
+    margin: 0;
+    
+    /* Optimized background image layering framework */
+    background-image: url('https://unsplash.com');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+    transition: background-image 0.8s ease-in-out;
+}
+
+/* Ensure the dark contrast layer covers the background picture properly */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(15, 23, 42, 0.45); /* Gives a modern dark photo blend */
+    z-index: 1;
+}
+
+
+/* Dark Overlay Layer to Make Text Pop Over Real Images */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.6) 100%);
+    z-index: 1;
+}
+
+/* Main Dashboard Card Wrapper */
+.app-container {
+    position: relative;
+    width: 100%;
+    max-width: 420px;
+    background: var(--glass-card);
+    backdrop-filter: blur(25px) saturate(160%);
+    -webkit-backdrop-filter: blur(25px) saturate(160%);
+    border: 1px solid var(--glass-border);
+    border-radius: 28px;
+    padding: 28px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+    z-index: 10;
+}
+
+/* Big Aesthetic Typographical Background Layer */
+.weather-bg-text {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 8.5rem;
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.03);
+    letter-spacing: -2px;
+    user-select: none;
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Premium Search Input Array */
+.header-panel {
+    margin-bottom: 24px;
+}
+
+.search-bar {
+    display: flex;
+    gap: 10px;
+    background: rgba(0, 0, 0, 0.35);
+    padding: 6px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.search-bar input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--text-main);
+    padding-left: 14px;
+    font-size: 0.95rem;
+}
+
+.search-bar input::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+button {
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.icon-btn {
+    background: rgba(255, 255, 255, 0.08);
+    padding: 12px;
+    border-radius: 12px;
+    font-size: 1.1rem;
+}
+
+.icon-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+}
+
+.text-btn {
+    background: var(--text-main);
+    color: #0f172a;
+    padding: 0 18px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.text-btn:hover {
+    background: #e2e8f0;
+    transform: translateY(-1px);
+}
+
+/* Core Meteorology Visual Layout */
+.dashboard-core {
+    text-align: center;
+    margin: 28px 0;
+}
+
+#city-name {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    text-transform: uppercase;
+}
+
+#weather-desc {
+    color: var(--text-sub);
+    font-size: 1rem;
+    margin-top: 4px;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+}
+
+.metrics-box {
+    margin-top: 14px;
+}
+
+.temp-readout {
+    font-size: 6rem;
+    font-weight: 100;
+    line-height: 1;
+    display: inline-block;
+    letter-spacing: -2px;
+}
+
+.degree-symbol {
+    font-size: 2.2rem;
+    vertical-align: super;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* New Creative Eco Insight Section Card */
+.wisdom-card {
+    background: rgba(16, 185, 129, 0.06);
+    border-left: 4px solid var(--eco-glow);
+    border-top: 1px solid rgba(255, 255, 255, 0.03);
+    border-right: 1px solid rgba(255, 255, 255, 0.03);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+    padding: 16px;
+    margin-top: 24px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.wisdom-tag {
+    font-size: 0.7rem;
+    font-weight: 800;
+    color: var(--eco-glow);
+    letter-spacing: 1.5px;
+    display: block;
+    margin-bottom: 6px;
+}
+
+#eco-tip {
+    font-size: 0.9rem;
+    color: var(--text-sub);
+    line-height: 1.5;
+    font-weight: 400;
+}
+
+/* High-Alert Disaster Warning Container */
+.alarm-container {
+    background: rgba(239, 68, 68, 0.12);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    border-radius: 16px;
+    padding: 16px;
+    margin-top: 20px;
+    backdrop-filter: blur(5px);
+}
+
+.alarm-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--alert-neon);
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+}
+
+.blink-dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--alert-neon);
+    border-radius: 50%;
+    animation: flash 1.5s infinite;
+}
+
+#alert-message {
+    font-size: 0.85rem;
+    color: var(--text-main);
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+
+.mute-btn {
+    background: var(--alert-neon);
+    color: var(--text-main);
+    width: 100%;
+    padding: 12px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.85rem;
+}
+
+.mute-btn:hover {
+    background: #ff5252;
+}
+
+/* Hidden Class Utility */
+.hidden {
+    display: none !important;
+}
+
+/* Keyframe Core Animations */
+@keyframes flash {
+    0% { opacity: 0.2; }
+    50% { opacity: 1; }
+    100% { opacity: 0.2; }
+}
+
+
+/* ====== BUTTON ANIMATION & INTERACTION SYSTEM ====== */
+
+button {
+    border: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    /* Cubic-bezier creates a professional, snappy spring-like transition */
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Micro-interaction: When user hovers cursor over buttons */
+button:hover {
+    transform: translateY(-2px) scale(1.04); /* Lifts up and increases size slightly */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25); /* Adds a subtle glowing shadow below */
+    filter: brightness(1.1); /* Slightly brightens colors */
+}
+
+/* Micro-interaction: When user physically clicks the mouse down */
+button:active {
+    transform: translateY(1px) scale(0.96); /* Compresses down for a realistic tactile button click feeling */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); /* Shrinks shadow size */
+    filter: brightness(0.9); /* Darkens slightly on press */
+}
+
+/* Specific styling for the microphone voice icon button */
+.icon-btn {
+    background: rgba(255, 255, 255, 0.08);
+    padding: 12px;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.icon-btn:hover {
+    background: rgba(255, 255, 255, 0.18);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Specific styling for the primary text search button */
+.text-btn {
+    background: var(--text-main);
+    color: #0f172a;
+    padding: 0 20px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+/* Specific styling for the emergency mute siren button */
+.mute-btn {
+    background: var(--alert-neon);
+    color: var(--text-main);
+    width: 100%;
+    padding: 12px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.2);
+}
+
+.mute-btn:hover {
+    background: #ff5252;
+    box-shadow: 0 8px 20px rgba(239, 68, 68, 0.4);
+}
+
+/* AI Floating Button Layout */
+.ai-chat-collapsed {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 100;
+}
+
+.ai-fab {
+    background: linear-gradient(135deg, #6366f1, #a855f7);
+    color: white;
+    padding: 14px 22px;
+    border-radius: 30px;
+    font-weight: 600;
+    box-shadow: 0 10px 25px rgba(147, 51, 234, 0.3);
+}
+
+/* Expanded AI Chat Box System */
+.ai-chat-window {
+    position: fixed;
+    bottom: 90px;
+    right: 25px;
+    width: 320px;
+    height: 400px;
+    background: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+    overflow: hidden;
+}
+
+.ai-chat-header {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.ai-chat-body {
+    flex: 1;
+    padding: 14px;
+    overflow-y: auto;
+    font-size: 0.85rem;
+}
+
+.ai-msg {
+    background: rgba(255, 255, 255, 0.06);
+    padding: 10px;
+    border-radius: 12px;
+    line-height: 1.4;
+}
+
+.ai-chat-input-area {
+    padding: 10px;
+    display: flex;
+    gap: 6px;
+    background: rgba(0,0,0,0.2);
+}
+
+.ai-chat-input-area input {
+    flex: 1;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 10px;
+    color: white;
+    padding: 8px 12px;
+    outline: none;
+    font-size: 0.85rem;
+}
+
+#close-chat-btn {
+    background: transparent;
+    color: var(--text-sub);
+    font-size: 1.4rem;
+}
+
+/* Add a smooth entry transition to the entire main container card */
+.weather-box-container {
+    position: relative;
+    width: 100%;
+    max-width: 410px;
+    background: var(--card-dark-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--border-white);
+    border-radius: 24px;
+    padding: 26px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+    z-index: 10;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Subtle interactive lifting effect when hovering over the main dashboard widget */
+.weather-box-container:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+}
+
+/* Modernize the Eco Wisdom card box on hover */
+.eco-wisdom-box {
+    background: rgba(16, 185, 129, 0.08);
+    border-left: 4px solid var(--green-accent);
+    border-radius: 12px;
+    padding: 14px;
+    margin-top: 20px;
+    transition: background 0.3s ease;
+}
+
+.eco-wisdom-box:hover {
+    background: rgba(16, 185, 129, 0.15); /* Slightly glows brighter when looked at */
+}
+
+/* ====== CUSTOM MODERN CHAT SCROLLBAR ====== */
+
+/* Track area width configuration */
+.ai-chat-messages::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* The background lane of the scroll bar */
+.ai-chat-messages::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+/* The actual moving drag handle bar slider */
+.ai-chat-messages::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+}
+
+.ai-chat-messages::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.4); /* Darkens slightly on focus interact */
+}
+
+body {
+    /* (Keep your other layout code properties like min-height, display flex, etc.) */
+    
+    /* This line ensures background gradients melt into each other smoothly */
+    transition: background 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+

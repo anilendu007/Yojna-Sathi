@@ -22,3 +22,8 @@ To operate effectively within tight device RAM restrictions, the software utiliz
 ### 🚀 Engineering Spotlight: Alternative Data Architectures
 * **Yojna Sathi:** Architected an offline-first Edge AI system that transforms unstructured local voice queries into structured regional intent metrics. 
 * **Data Monetization Framework:** Designed a Data-as-a-Service (DaaS) pipeline aggregating grassroots search frequencies into predictive Demand Heatmaps for B2G/NGO allocation, optimizing resource distribution using matrix-co-occurrence logic.
+
+### 🛠️ Hardware Feasibility & Low-Overhead Architecture
+* **Footprint Limitation:** Restricted the execution engine memory boundaries down to **< 150MB** via post-training quantization techniques, comfortably executing under 1 GB total mobile system ceilings.
+* **Network Tolerance:** Implemented a Delay-Tolerant Network (DTN) infrastructure leveraging opportunistic synchronization logic to process micro-packet delta updates without permanent cloud lifelines.
+* **Keywords Used:** `Post-Training Quantization`, `Delay-Tolerant Networking (DTN)`, `Data-Mule Processing Framework`, `Unstructured Alternative Data Monetization`, `Intent-Driven Demand Heatmaps`.

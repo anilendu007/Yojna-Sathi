@@ -19,3 +19,6 @@ To operate effectively within tight device RAM restrictions, the software utiliz
 * *Core Language Execution:* C++ (Performance Routing Engines)
 * *Localized Storage:* FlatBuffers / Custom Binary Tables
 
+### 🚀 Engineering Spotlight: Alternative Data Architectures
+* **Yojna Sathi:** Architected an offline-first Edge AI system that transforms unstructured local voice queries into structured regional intent metrics. 
+* **Data Monetization Framework:** Designed a Data-as-a-Service (DaaS) pipeline aggregating grassroots search frequencies into predictive Demand Heatmaps for B2G/NGO allocation, optimizing resource distribution using matrix-co-occurrence logic.
